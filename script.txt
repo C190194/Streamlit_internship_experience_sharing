@@ -1,0 +1,28 @@
+Hi, I'm Huang Runtao, an NTU Year 3 student studying Computer Science.
+I have been working in NCS as an intern for 4 months.
+
+Today I will share about the work that I've been doing and some software tools and libraries used in the project.
+
+First, for the project I'm working on, it aims to build a Python program with Pytorch that can detect anomalous sounds from a shifted domain. The topic was taken from DCASE Challenge 2021 (Task 2), so the performence baselines of my program are also the same as the ones provided in the Challenge.
+
+Here, the "shifted domain" means the object emitting the sound is under different working conditions. The main challenge is that, all the sounds for training were normal data, and most of them were collected from a machine working in the source domain. Only a few sounds were recorded in the target domain. Therefore, if the trained model works well, it should be able to detect abnormal sounds of a machine working in both source and target domains. It can help factories to detect machine failures and reduce the cost of recording sounds for training the model.
+
+The general process of the solution is shown here:
+1. Transform the sound file into a log-mel-spectrogram, which is a matrix.
+2. Train models to generate a score for each sound file.
+3. Make classification based on the score.
+
+To build my solution, I have tested various unsupervised anomaly detection methods from libraries, such as Scikit-learn and PyOD. Since the competition has ended, I also looked into a few solutions with high rankings.
+
+Currently, I am trying to implement the solution which got the 3rd place in the competition. Since its basic neural network was implemented with Tensorflow, I will try to transform it into Pytorch code once I get good results.
+
+Next, I will breifly introduce some software tools and libraries used in my project. 
+
+For building neural networks, Tensorflow and Pytorch were used in the project. Before this internship, I had little experience of using the 2 libraries. After following the tutorials in their official documents, I have become more familiar with their data loading, training and testing stages.
+
+For software tools, as you can see, my presentation slides are made by a Python package called Streamlit. You could easily add interactive widgets to your slide with the APIs provided in Streamlit. When you present your results from data analysis or machine learning models, you could adjust the inputs, and then the output results will change along. I think during your internship, most of the presentation slides will be made in Streamlit. As a start, you could check out the official documents online. It's quite easy to follow.
+
+Another software tool I want to share about is Docker. It allows us to share and run our codes on different machines with the same package dependencies. For example, after you complete some Streamlit slides with machine learning models, you want to run it using another computer. You could add a short Docker file into your project folder. Then in another computer, just install Docker and type 2 lines of command. Then Docker will set up the environment, download all the packages you need, and run the code for you. However, one thing to note is that, if you are using Pytorch, you need to make sure the version of Pytorch and Cuda in the environment.yml file matches the type of GPU in the computer where you want to run the code.
+
+
+
