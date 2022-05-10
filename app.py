@@ -67,9 +67,6 @@ if select_slide == "Project Overview":
     st.write("2. Implementing the solution which got the 3rd place in the competition")
     st.write(" ")
 
-    if st.button('next page'):
-        select_slide = "Isolation Forest"
-
     
 
 elif select_slide == "Pytorch & Tensorflow":
