@@ -173,6 +173,9 @@ elif select_slide == "Docker":
             and run the code for you")
         st.image(command1_pic)
         st.image(command2_pic)
+        st.write(" ")
+        
+        st.write("The instructions for installing Docker on Ubuntu is [here](https://docs.docker.com/engine/install/ubuntu/)")
 
     with col2:
         st.image(docker_logo)
